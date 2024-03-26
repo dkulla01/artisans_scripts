@@ -1,0 +1,41 @@
+{
+    "name": "artisans_scripts",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                // "python.analysis.extraPaths": [
+                // ],
+                "editor.defaultFormatter": "charliermarsh.ruff",
+                "extensions.autoUpdate": false,
+                "python.defaultInterpreterPath": "/home/vscode/.poetry-root/.cache/virtualenvs/artisans_scripts/bin/python",
+                "python.languageServer": "Pylance",
+                "python.testing.pytestPath": "/home/vscode/.poetry-root/.cache/virtualenvs/artisans_scripts/bin/pytest",
+                "rewrap.wrappingColumn": 88,
+                "python.analysis.typeCheckingMode": "strict",
+                "python.analysis.logLevel": "Trace",
+                "python.analysis.stubPath": "typings",
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit"
+                    }
+                }
+            },
+            "extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker",
+				"tamasfe.even-better-toml",
+				"charliermarsh.ruff",
+				"github.vscode-github-actions",
+				"timonwong.shellcheck"
+			]
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "bash ./.devcontainer/post-install.sh",
+    "remoteUser": "vscode"
+}
